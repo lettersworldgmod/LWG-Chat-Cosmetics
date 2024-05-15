@@ -1,0 +1,12 @@
+{
+    "title": "lwg-chat-cosmetics",
+    "description": "Dead simple chat cosmetics w/ ULX usergroup support",
+    "type": "servercontent",
+    "tags": [
+        "build"
+    ],
+    "ignore": [
+        ".git/*",
+        "README.md"
+    ]
+}
