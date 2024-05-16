@@ -3,7 +3,7 @@ lwgcc_settings = {}
 -- Message format.
 
 -- Placeholders for strings can be in the same string segment as other placeholders for strings. 
--- Replaces USER_NAME with the player's name.
+-- Replaces PLAYER_NAME with the player's name.
 -- Replaces TEAM_NAME with the Team Name e.g. Owner.
 -- Replaces USER_GROUP with the usergroup name e.g. superadmin.
 -- Replaces TEAM_OR_UG with the team name, or if it's not found, the usergroup name.
@@ -14,14 +14,12 @@ lwgcc_settings = {}
 -- Replaces PLAYER_COLOR with the player's Player color.
 
 lwgcc_settings.Format = { -- This can also probably be a function that returns a table of values like this? Dunno
-    Color(0, 0, 0),       -- Maybe you can return different tables based on usergroup or steamID or whatever
-    "[",
-    TEAM_COLOR,
+    TEAM_COLOR,           -- Maybe you can return different tables based on usergroup or steamID or whatever
     TEAM_OR_UG,
     Color(0, 0, 0),
-    "] ",
+    " | ",
     PLAYER_COLOR,
-    USER_NAME,
+    PLAYER_NAME,
     Color(230, 230, 230),
     ": ",
     MSG_CONTENT,
@@ -50,7 +48,7 @@ function resolvePlaceholders(husk, ply, content)
         output = string.gsub(output, "TEAM_NAME", team.GetName(ply:Team()))
         output = string.gsub(output, "USER_GROUP", ply:GetUserGroup())
         output = string.gsub(output, "TEAM_OR_UG", tu)
-        output = string.gsub(output, "USER_NAME", ply:Name())
+        output = string.gsub(output, "PLAYER_NAME", ply:Name())
         output = string.gsub(output, "MSG_CONTENT", content) -- CONTENT HAS TO ALWAYS BE LAST
     end
 
@@ -65,4 +63,4 @@ TEAM_NAME = "TEAM_NAME"
 USER_GROUP = "USER_GROUP"
 TEAM_OR_UG = "TEAM_OR_UG"
 MSG_CONTENT = "MSG_CONTENT"
-USER_NAME = "USER_NAME"
+PLAYER_NAME = "PLAYER_NAME"
