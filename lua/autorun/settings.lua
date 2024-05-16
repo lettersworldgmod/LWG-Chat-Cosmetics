@@ -13,8 +13,8 @@ lwgcc_settings = {}
 -- Replaces TEAM_COLOR with the team (rank) color.
 -- Replaces PLAYER_COLOR with the player's Player color.
 
-lwgcc_settings.Format = {
-    Color(0, 0, 0),
+lwgcc_settings.Format = { -- This can also probably be a function that returns a table of values like this? Dunno
+    Color(0, 0, 0),       -- Maybe you can return different tables based on usergroup or steamID or whatever
     "[",
     TEAM_COLOR,
     TEAM_OR_UG,
