@@ -30,9 +30,6 @@ lwgcc_settings.Format = { -- This can also probably be a function that returns a
 function resolvePlaceholders(husk, ply, content)
     local output = husk
 
-    print("husk is " .. type(husk))
-    print(husk)
-
     if type(output) == "table" then -- It's a constant color, skip it
         return output
     else

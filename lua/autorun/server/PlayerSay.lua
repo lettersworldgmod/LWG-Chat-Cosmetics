@@ -8,11 +8,8 @@ hook.Add("PlayerSay", "LWGCC_DefaultMessage", function (player, content, teamcha
     local message = {}
 
     for idx, value in ipairs(lwgcc_settings.Format) do
-        print(resolvePlaceholders(value, player, content))
         table.insert(message, resolvePlaceholders(value, player, content))
     end
-
-    print(unpack(message))
 
     net.WriteTable({message})
     net.Broadcast()
