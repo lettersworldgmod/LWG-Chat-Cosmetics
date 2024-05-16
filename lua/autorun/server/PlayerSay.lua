@@ -11,7 +11,7 @@ hook.Add("PlayerSay", "LWGCC_DefaultMessage", function (player, content, teamcha
         table.insert(message, resolvePlaceholders(value, player, content))
     end
 
-    net.WriteTable({message})
+    net.WriteTable(message)
     net.Broadcast()
     return ""
 end)
