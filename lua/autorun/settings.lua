@@ -26,9 +26,7 @@ lwgcc_settings.Format = { -- This can also probably be a function that returns a
     MSG_CONTENT,
 }
 
--- Only Colors, string literals and PLAYER_NAME are valid in here
-
-lwgcc_settings.JoinMessageFormat = {
+lwgcc_settings.JoinMessageFormat = { -- Only PLAYER_NAME is valid here
     Color(0, 0, 0),
     "[",
     Color(0, 200, 0),
@@ -39,8 +37,7 @@ lwgcc_settings.JoinMessageFormat = {
     PLAYER_NAME,
     " connected."
 }
-
-lwgcc_settings.LeaveMessageFormat = {
+lwgcc_settings.LeaveMessageFormat = { -- What's valid here depends on the ply object. /shrug
     Color(0, 0, 0),
     "[",
     Color(200, 0, 0),
