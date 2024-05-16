@@ -18,7 +18,7 @@ lwgcc_settings.Format = { -- This can also probably be a function that returns a
     TEAM_OR_UG,
     Color(0, 0, 0),
     " | ",
-    PLAYER_COLOR,
+    TEAM_COLOR,
     PLAYER_NAME,
     Color(230, 230, 230),
     ": ",
