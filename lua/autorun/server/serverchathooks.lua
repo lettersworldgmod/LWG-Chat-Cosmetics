@@ -28,4 +28,16 @@ hook.Add("PlayerConnect", "LWGCC_JoinMessage", function (playername, ip)
     net.Broadcast()
 end)
 
+hook.Add("PlayerDisconnected", "LWGCC_LeaveMessage", function (ply)
+    net.Start("LWGCC_DefaultMessage")
+    local message = {}
+
+    for idx, value in ipairs(lwgcc_settings.LeaveMessageFormat) do
+        table.insert(message, resolvePlaceholders(value, ply, nil))
+    end
+
+    net.WriteTable(message)
+    net.Broadcast()
+end)
+
 print("[LWG Chat Cosmetics] Server initialized")

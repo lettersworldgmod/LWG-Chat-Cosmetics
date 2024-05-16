@@ -1,6 +1,7 @@
 lwgcc_settings = {}
 
 -- Message formats.
+-- Set to an empty table for nothing.
 
 -- Placeholders for strings can be in the same string segment as other placeholders for strings. 
 -- Replaces PLAYER_NAME with the player's name.
@@ -36,7 +37,19 @@ lwgcc_settings.JoinMessageFormat = {
     "] ",
     Color(200, 200, 200),
     PLAYER_NAME,
-    " joined."
+    " connected."
+}
+
+lwgcc_settings.LeaveMessageFormat = {
+    Color(0, 0, 0),
+    "[",
+    Color(200, 0, 0),
+    "-",
+    Color(0, 0, 0),
+    "] ",
+    Color(200, 200, 200),
+    PLAYER_NAME,
+    " disconnected."
 }
 
 -- functions
