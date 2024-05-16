@@ -16,4 +16,16 @@ hook.Add("PlayerSay", "LWGCC_DefaultMessage", function (player, content, teamcha
     return ""
 end)
 
+hook.Add("PlayerConnect", "LWGCC_JoinMessage", function (playername, ip)
+    net.Start("LWGCC_DefaultMessage")
+    local message = {}
+
+    for idx, value in ipairs(lwgcc_settings.JoinMessageFormat) do
+        table.insert(message, resolvePlaceholders(value, nil, nil, playername))
+    end
+
+    net.WriteTable(message)
+    net.Broadcast()
+end)
+
 print("[LWG Chat Cosmetics] Server initialized")
